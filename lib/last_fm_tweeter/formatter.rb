@@ -7,13 +7,14 @@ module LastFmTweeter
     def format(song)
       artist_name = format_artist_name(song["artist"]["content"])
       song_name = format_song_name(song["name"])
-      return song_name + " - " + artist_name + " #nowplaying"
+      hashtag = format_hashtag(song["nowplaying"])
+      return "#{song_name} - #{artist_name} ##{hashtag}"
     end
 
     # Formats artist name for tweet
     def format_artist_name(artist_name)
-      if(artist_name.length > 63)
-        return artist_name[0 .. 59] + "..."
+      if(artist_name.length > 52)
+        return artist_name[0 .. 48] + "..."
       else
         return artist_name
       end
@@ -21,10 +22,19 @@ module LastFmTweeter
 
     # Formats song name for tweet
     def format_song_name(song_name)
-      if(song_name.length > 60)
-        return "\"" + song_name[0 .. 56] + "...\""
+      if(song_name.length > 48)
+        return "\"" + song_name[0 .. 44] + "...\""
       else
         return "\"" + song_name + "\""
+      end
+    end
+
+    # Determines hashtag for tweet
+    def format_hashtag(nowplaying)
+      if nowplaying
+        return "nowplaying"
+      else
+        return "tweetsong"
       end
     end
   end

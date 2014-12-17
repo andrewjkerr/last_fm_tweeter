@@ -1,5 +1,6 @@
 require 'twitter'
 require 'lastfm'
+require 'open-uri'
 
 module LastFmTweeter
   class Clients
@@ -22,6 +23,10 @@ module LastFmTweeter
 
     def send_tweet(text)
       @twitter_client.update(text)
+    end
+
+    def send_tweet_with_album_art(text, image)
+      @twitter_client.update_with_media(text, open(image))
     end
   end
 end
