@@ -1,6 +1,6 @@
 # LastFmTweeter
 
-Tweets your last played scrobbled song on Last.FM.
+Tweets your last scrobbled song on Last.FM.
 
 ## Installation
 
@@ -52,4 +52,4 @@ tweetsong
 
 ## Thanks
 
-Thanks to @connorjacobsen for his README over on the tweet_scheduler repository ([https://github.com/connorjacobsen/tweet_scheduler](https://github.com/connorjacobsen/tweet_scheduler))for helping me get this frickin' thing running.
+Thanks to @connorjacobsen for his README over on the tweet_scheduler repository ([https://github.com/connorjacobsen/tweet_scheduler](https://github.com/connorjacobsen/tweet_scheduler)) for helping me get this frickin' thing running.
